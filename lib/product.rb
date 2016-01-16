@@ -28,7 +28,7 @@ class Product
   end
 
   def increment_stock_by(num)
-    @stock -= num
+    @stock += num
   end
 
   def self.all

@@ -2,6 +2,9 @@ require_relative "lib/errors"
 require_relative "lib/customer"
 require_relative "lib/product"
 require_relative "lib/transaction"
+require_relative "lib/charts"
+
+require 'ascii_charts'
 
 # PRODUCTS
 
@@ -77,3 +80,27 @@ rescue => e
   # Should return OutOfStockError: 'LEGO Firehouse Headquarter' is out of stock.
   puts "wrong error message" unless e.message.eql?("'LEGO Firehouse Headquarter' is out of stock.")
 end
+
+puts
+puts "New Features"
+puts
+
+# New Features
+# -----------------
+ironman = Product.find_by_title("LEGO Iron Man vs. Ultron")
+
+
+shawn = Customer.new(name: "Shawn Bower", zip_code: "14845")
+brenda = Customer.new(name: "Brenda", zip_code: "90210")
+
+shawn.purchase(nanoblock)
+shawn.purchase(nanoblock)
+shawn.purchase(ironman)
+
+brenda_purchase = brenda.purchase(ironman)
+
+Charts.draw_products_per_zip
+
+brenda.return(brenda_purchase.id)
+
+puts ironman.stock # should return 54

@@ -1,0 +1,23 @@
+How long did you spend working on this project?
+
+  4 hours
+
+What was the most rewarding challenge you conquered?
+
+  Adding a feature to create an ascii bar chart to show products purchased by zip code
+
+What two additional features did you build? Why?
+
+  1) Add ability for customer to return a Transaction -- This allows for a more realistic shopping simulation
+  2) added new demographic data to the Customer class -- More data allows to insight into how/why purchase are made
+    a) age
+    b) zip_code
+  3) Added new find methods to the transaction class -- This makes it easier to slice the data
+  4) Added new error for transaction not found -- Used when looking for transaction involved in a return
+  5) Create a new Chart class -- Allows insight into purchasing patterns
+    a) created a single method to draw a bar chart to show products purchased by zip code
+
+Where do you still have room to grow?
+
+  There could be better and more error handling.  It would be cool to add more charts and more demogrpahic data.
+  It would be nice to DRY up some of the find methods in the transaction class.
